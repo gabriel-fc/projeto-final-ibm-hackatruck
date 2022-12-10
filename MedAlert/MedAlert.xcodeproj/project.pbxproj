@@ -13,6 +13,9 @@
 		3F1D6B312944FBBB005FD346 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1D6B2F2944FBBB005FD346 /* Main.storyboard */; };
 		3F1D6B332944FBBC005FD346 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1D6B322944FBBC005FD346 /* Assets.xcassets */; };
 		3F1D6B362944FBBC005FD346 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1D6B342944FBBC005FD346 /* LaunchScreen.storyboard */; };
+		3F65645629450CA500998B41 /* MedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65645529450CA500998B41 /* MedicineTableViewCell.swift */; };
+		3F65645829450D8600998B41 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65645729450D8600998B41 /* Medicine.swift */; };
+		3F65645A29450E4000998B41 /* MedicineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65645929450E4000998B41 /* MedicineTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		3F1D6B322944FBBC005FD346 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F1D6B352944FBBC005FD346 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F1D6B372944FBBC005FD346 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F65645529450CA500998B41 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
+		3F65645729450D8600998B41 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
+		3F65645929450E4000998B41 /* MedicineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				3F1D6B322944FBBC005FD346 /* Assets.xcassets */,
 				3F1D6B342944FBBC005FD346 /* LaunchScreen.storyboard */,
 				3F1D6B372944FBBC005FD346 /* Info.plist */,
+				3F65645529450CA500998B41 /* MedicineTableViewCell.swift */,
+				3F65645929450E4000998B41 /* MedicineTableViewController.swift */,
+				3F65645729450D8600998B41 /* Medicine.swift */,
 			);
 			path = MedAlert;
 			sourceTree = "<group>";
@@ -138,9 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F65645829450D8600998B41 /* Medicine.swift in Sources */,
+				3F65645A29450E4000998B41 /* MedicineTableViewController.swift in Sources */,
 				3F1D6B2E2944FBBB005FD346 /* ViewController.swift in Sources */,
 				3F1D6B2A2944FBBB005FD346 /* AppDelegate.swift in Sources */,
 				3F1D6B2C2944FBBB005FD346 /* SceneDelegate.swift in Sources */,
+				3F65645629450CA500998B41 /* MedicineTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
