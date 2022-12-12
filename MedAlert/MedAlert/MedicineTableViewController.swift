@@ -40,6 +40,7 @@ class MedicineTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "medicine", for: indexPath)
         
+        
         if let medicineCell = cell as? MedicineTableViewCell{
             let medicine = medicineList[indexPath.row]
             
