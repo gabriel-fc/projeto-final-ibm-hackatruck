@@ -10,12 +10,15 @@ import UIKit
 
 class MedicineTableViewController: UITableViewController {
 
-    var medicineList = [Medicine]()
+    var medicines = [Medicine]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Entra aqui1")
-        medicineList = MedicineDAO.getList()
+        //medicineList = MedicineDAO.getList()
+        downloadJSON {
+            self.tableView.reloadData()
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,7 +36,7 @@ class MedicineTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return medicineList.count
+        return medicines.count
     }
 
     
@@ -42,17 +45,17 @@ class MedicineTableViewController: UITableViewController {
         
         
         if let medicineCell = cell as? MedicineTableViewCell{
-            let medicine = medicineList[indexPath.row]
+            let medicine = medicines[indexPath.row]
             
-            medicineCell.medicineNameLabel.text = medicine.medicineName
+            medicineCell.medicineNameLabel.text = medicine.medicineName!
             
             return medicineCell
         }
-        print("Entra aqui2")
         // Configure the cell...
 
         return cell
     }
+ 
     
 
     /*
@@ -99,5 +102,28 @@ class MedicineTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func downloadJSON(completed: @escaping () -> ()){
+    let url = URL(string: "http://127.0.0.1:1880/medicines")
+    URLSession.shared.dataTask(with: url!) {
+        data, response, err in
+        if err == nil{
+            do {
+                let dados = try JSONDecoder().decode(getMedicines.self, from: data!)
+                self.medicines = dados.medicines
+                //self.timestamp = self.brFormatDateFrom(timestamp: dados.timestamp!)
+             print(self.medicines[0].medicineName!)
+                DispatchQueue.main.async {
+                    completed()
+                }
+            }
+            catch{
+                print(err!)
+            }
+        }
+    }.resume()
+    }
+    
+    
 
 }

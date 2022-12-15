@@ -18,6 +18,9 @@
 		3F65645A29450E4000998B41 /* MedicineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65645929450E4000998B41 /* MedicineTableViewController.swift */; };
 		3FDFC3912949038F00B9C42E /* AppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDFC3902949038F00B9C42E /* AppointmentTableViewCell.swift */; };
 		3FDFC393294903A600B9C42E /* AppointmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDFC392294903A600B9C42E /* AppointmentsTableViewController.swift */; };
+		3FE5EB19294A573800B05FD2 /* getMedicines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE5EB18294A573800B05FD2 /* getMedicines.swift */; };
+		3FE5EB1B294A5DF900B05FD2 /* getAppointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE5EB1A294A5DF900B05FD2 /* getAppointments.swift */; };
+		3FE5EB1D294A5E5D00B05FD2 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE5EB1C294A5E5D00B05FD2 /* Appointment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		3F65645929450E4000998B41 /* MedicineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTableViewController.swift; sourceTree = "<group>"; };
 		3FDFC3902949038F00B9C42E /* AppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentTableViewCell.swift; sourceTree = "<group>"; };
 		3FDFC392294903A600B9C42E /* AppointmentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsTableViewController.swift; sourceTree = "<group>"; };
+		3FE5EB18294A573800B05FD2 /* getMedicines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getMedicines.swift; sourceTree = "<group>"; };
+		3FE5EB1A294A5DF900B05FD2 /* getAppointments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getAppointments.swift; sourceTree = "<group>"; };
+		3FE5EB1C294A5E5D00B05FD2 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +74,12 @@
 			children = (
 				3F1D6B292944FBBB005FD346 /* AppDelegate.swift */,
 				3F1D6B2B2944FBBB005FD346 /* SceneDelegate.swift */,
+				3FE5EB1A294A5DF900B05FD2 /* getAppointments.swift */,
 				3F1D6B2D2944FBBB005FD346 /* ViewController.swift */,
 				3F1D6B2F2944FBBB005FD346 /* Main.storyboard */,
+				3FE5EB18294A573800B05FD2 /* getMedicines.swift */,
 				3FDFC3902949038F00B9C42E /* AppointmentTableViewCell.swift */,
+				3FE5EB1C294A5E5D00B05FD2 /* Appointment.swift */,
 				3FDFC392294903A600B9C42E /* AppointmentsTableViewController.swift */,
 				3F1D6B322944FBBC005FD346 /* Assets.xcassets */,
 				3F1D6B342944FBBC005FD346 /* LaunchScreen.storyboard */,
@@ -154,10 +163,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F65645829450D8600998B41 /* Medicine.swift in Sources */,
+				3FE5EB19294A573800B05FD2 /* getMedicines.swift in Sources */,
+				3FE5EB1D294A5E5D00B05FD2 /* Appointment.swift in Sources */,
 				3FDFC393294903A600B9C42E /* AppointmentsTableViewController.swift in Sources */,
 				3F65645A29450E4000998B41 /* MedicineTableViewController.swift in Sources */,
 				3FDFC3912949038F00B9C42E /* AppointmentTableViewCell.swift in Sources */,
 				3F1D6B2E2944FBBB005FD346 /* ViewController.swift in Sources */,
+				3FE5EB1B294A5DF900B05FD2 /* getAppointments.swift in Sources */,
 				3F1D6B2A2944FBBB005FD346 /* AppDelegate.swift in Sources */,
 				3F1D6B2C2944FBBB005FD346 /* SceneDelegate.swift in Sources */,
 				3F65645629450CA500998B41 /* MedicineTableViewCell.swift in Sources */,

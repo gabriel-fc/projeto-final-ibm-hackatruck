@@ -1,0 +1,165 @@
+[
+    {
+        "id": "fd49a03784e0463d",
+        "type": "tab",
+        "label": "api-medalert",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f2a9510238778078",
+        "type": "cloudantplus in",
+        "z": "fd49a03784e0463d",
+        "name": "",
+        "cloudant": "035ecea766606adb",
+        "database": "gabrielferreiratardedb",
+        "service": "_ext_",
+        "search": "_id_",
+        "design": "",
+        "index": "",
+        "x": 680,
+        "y": 100,
+        "wires": [
+            [
+                "0ac6669005e90f26"
+            ]
+        ]
+    },
+    {
+        "id": "4ff7f370ded01cca",
+        "type": "http in",
+        "z": "fd49a03784e0463d",
+        "name": "",
+        "url": "medicines",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "6a32833b37a6c258"
+            ]
+        ]
+    },
+    {
+        "id": "0ac6669005e90f26",
+        "type": "http response",
+        "z": "fd49a03784e0463d",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1100,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "6a32833b37a6c258",
+        "type": "change",
+        "z": "fd49a03784e0463d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "medicines",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 100,
+        "wires": [
+            [
+                "f2a9510238778078"
+            ]
+        ]
+    },
+    {
+        "id": "2205a21257f082e7",
+        "type": "cloudantplus in",
+        "z": "fd49a03784e0463d",
+        "name": "",
+        "cloudant": "035ecea766606adb",
+        "database": "gabrielferreiratardedb",
+        "service": "_ext_",
+        "search": "_id_",
+        "design": "",
+        "index": "",
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "d5c8393bd6b27ada"
+            ]
+        ]
+    },
+    {
+        "id": "ee398ac66b56083f",
+        "type": "http in",
+        "z": "fd49a03784e0463d",
+        "name": "",
+        "url": "appointments",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "534d94af2354b199"
+            ]
+        ]
+    },
+    {
+        "id": "d5c8393bd6b27ada",
+        "type": "http response",
+        "z": "fd49a03784e0463d",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1100,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "534d94af2354b199",
+        "type": "change",
+        "z": "fd49a03784e0463d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "appointments",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 240,
+        "wires": [
+            [
+                "2205a21257f082e7"
+            ]
+        ]
+    },
+    {
+        "id": "035ecea766606adb",
+        "type": "cloudantplus",
+        "host": "https://apikey-v2-2ocjmciahr6sz7l8h2gx9qoz2iohytdl8tit82cz91gn:d3ef3f703fc6c1258dc71ed1c00a4d69@bbd3c0ee-d0c8-455b-bbd3-8d6d996c2c0a-bluemix.cloudantnosqldb.appdomain.cloud",
+        "name": "gabrielferreiratardedb",
+        "useapikey": false
+    }
+]

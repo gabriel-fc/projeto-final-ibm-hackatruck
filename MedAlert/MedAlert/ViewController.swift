@@ -7,51 +7,28 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController {
     @IBOutlet weak var homeLabel: UILabel!
-    
+    @IBOutlet weak var dateInput: UIDatePicker!
+    @IBOutlet weak var timeInput: UIDatePicker!
+    @IBAction func refreshButton(_ sender: Any) {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(abbreviation: "BRT")
+        formatter.locale = Locale(identifier: "pt_BR")
+        formatter.dateFormat = "dd/MM/yyyy"
+        let str = formatter.string(from: dateInput.date)
+        print(str)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        httpRequest {
-            print("funcionou")
-        }
+        
         //homeLabel.text =
         // Do any additional setup after loading the view.
     }
     
     
-    func httpRequest(completed: @escaping () -> ()){
-        let url = URL(string: "http://127.0.0.1:1880/medicines")
-        var request = URLRequest(url:url!)
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.httpMethod="POST"
-        let parameters: [String: Any] = [
-            "id": 13,
-            "name": "Jack & Jill"
-        ]
-        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
-             URLSession.shared.dataTask(with: request){
-                 data, response, err in
-                print("fora do if")
-                if err == nil{
-                     do{
-                         print(response!)
-                        DispatchQueue.main.async {
-                            completed()
-                        }
-                     }
-                    catch{
-                        print("err")
-                    }
-                 }
-               
-                 
-        }.resume()
-    }
     
+     
+    }
 
-
-}
 

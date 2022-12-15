@@ -10,6 +10,9 @@ import UIKit
 
 class AppointmentTableViewCell: UITableViewCell {
     @IBOutlet weak var specialtyLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var docNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

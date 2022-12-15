@@ -9,18 +9,15 @@
 import Foundation
 
 
-class Medicine {
-    let medicineName: String
-    
-    init(medicineName: String) {
-        self.medicineName = medicineName
-    }
+struct Medicine: Codable {
+    let medicineName: String?
+
 }
-class MedicineDAO{
-    
-    static func getList() -> [Medicine]{
-        return [
-        Medicine(medicineName: "Dorflex"), Medicine(medicineName: "Paracetamol"), Medicine(medicineName: "Cimegripe")
-        ]
-    }
-}
+//class MedicineDAO{
+//
+//    static func getList() -> [Medicine]{
+//        return [
+//        Medicine(medicineName: "Dorflex"), Medicine(medicineName: "Paracetamol"), Medicine(medicineName: "Cimegripe")
+//        ]
+//    }
+//}

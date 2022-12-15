@@ -9,9 +9,13 @@
 import UIKit
 
 class AppointmentsTableViewController: UITableViewController {
-
+    
+    var appointments = [Appointment]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        downloadJSON {
+            self.tableView.reloadData()
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,23 +28,31 @@ class AppointmentsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return appointments.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "appointmentCell", for: indexPath)
+        if let appointmentCell = cell as? AppointmentTableViewCell{
+            let appointment = appointments[indexPath.row]
+            appointmentCell.dateLabel.text = appointment.date!
+            appointmentCell.docNameLabel.text = appointment.name!
+            appointmentCell.hourLabel.text = appointment.time!
+            appointmentCell.specialtyLabel.text = appointment.specialty!
+            return appointmentCell
+        }
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,5 +98,26 @@ class AppointmentsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func downloadJSON(completed: @escaping () -> ()){
+    let url = URL(string: "http://127.0.0.1:1880/appointments")
+    URLSession.shared.dataTask(with: url!) {
+        data, response, err in
+        if err == nil{
+            do {
+                let dados = try JSONDecoder().decode(getAppointments.self, from: data!)
+                self.appointments = dados.appointments
+                //self.timestamp = self.brFormatDateFrom(timestamp: dados.timestamp!)
+             print(self.appointments[0])
+                DispatchQueue.main.async {
+                    completed()
+                }
+            }
+            catch{
+                print(err!)
+            }
+        }
+    }.resume()
+    }
 
 }
